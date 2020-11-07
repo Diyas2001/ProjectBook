@@ -13,6 +13,7 @@ import { AboutComponent } from './home/about/about.component';
 import { AuthorComponent } from './authors/author/author.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegistrationComponent } from './home/registration/registration.component';
+import { AddNewBookComponent } from './books/add-new-book/add-new-book.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RegistrationComponent } from './home/registration/registration.componen
     AboutComponent,
     AuthorComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AddNewBookComponent,
   ],
   imports: [
     BrowserModule,
