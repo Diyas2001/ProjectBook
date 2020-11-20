@@ -21,5 +21,5 @@ describe('GroupComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+   });
 });

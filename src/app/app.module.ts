@@ -45,4 +45,4 @@ import {AdminModule} from './home/AdminModule/AdminModule';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

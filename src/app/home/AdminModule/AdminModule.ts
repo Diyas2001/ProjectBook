@@ -16,5 +16,5 @@ import {AdminRoutingModule} from './AdminRoute';
     UserComponent, GroupComponent, DashboardComponent
   ],
   bootstrap: [UserComponent]
-})
+ })
 export class AdminModule {}
