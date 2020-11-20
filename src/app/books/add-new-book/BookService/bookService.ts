@@ -6,7 +6,6 @@ import {BookLogging} from './bookLogging';
 export class BookService {
   constructor(private bookLogging: BookLogging){
   }
-  // tslint:disable-next-line:typedef
   getBooks(){
     let bookList: Book[];
     bookList = [

@@ -14,6 +14,10 @@ import { AuthorComponent } from './authors/author/author.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegistrationComponent } from './home/registration/registration.component';
 import { AddNewBookComponent } from './books/add-new-book/add-new-book.component';
+import { UserComponent } from './home/AdminModule/user/user.component';
+import { GroupComponent } from './home/AdminModule/group/group.component';
+import { DashboardComponent } from './home/AdminModule/dashboard/dashboard.component';
+import {AdminModule} from './home/AdminModule/AdminModule';
 
 @NgModule({
   declarations: [
@@ -29,10 +33,14 @@ import { AddNewBookComponent } from './books/add-new-book/add-new-book.component
     LoginComponent,
     RegistrationComponent,
     AddNewBookComponent,
+    UserComponent,
+    GroupComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
