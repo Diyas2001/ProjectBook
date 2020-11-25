@@ -14,10 +14,8 @@ import { AuthorComponent } from './authors/author/author.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegistrationComponent } from './home/registration/registration.component';
 import { AddNewBookComponent } from './books/add-new-book/add-new-book.component';
-import { UserComponent } from './home/AdminModule/user/user.component';
-import { GroupComponent } from './home/AdminModule/group/group.component';
-import { DashboardComponent } from './home/AdminModule/dashboard/dashboard.component';
 import {AdminModule} from './home/AdminModule/AdminModule';
+import {LikePipe} from './books/book/LikePipe';
 
 @NgModule({
   declarations: [
@@ -33,9 +31,7 @@ import {AdminModule} from './home/AdminModule/AdminModule';
     LoginComponent,
     RegistrationComponent,
     AddNewBookComponent,
-    UserComponent,
-    GroupComponent,
-    DashboardComponent,
+    LikePipe,
   ],
   imports: [
     BrowserModule,

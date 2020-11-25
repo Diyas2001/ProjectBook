@@ -1,32 +1,45 @@
-<div style="background-color: ">
-<br>
-<!-- Card deck -->
-<div style="margin-left: 20px; margin-right: 15px" class="card-deck" >
-
-  <!-- Card -->
-  <div style="padding: 20px" class="card mb-4">
-
-    <!--Card image-->
-    <div class="view overlay">
-      <img class="card-img-top" src="https://uploads-ssl.webflow.com/5f280c5b57d2edfcbbb057ea/5f2960f40b95b440c7d4a732_1.jpg"
-           alt="Card image cap">
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-
-    <!--Card content-->
-    <div class="card-body">
-
-      <!--Title-->
-      <h4 class="card-title">The Pragmatic Programmer</h4>
-      <!--Text-->
-      <p class="card-text">David Thomas & Andrew Hunt</p>
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-    </div>
-
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Book</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-</div>
-</div>
+  <div class="modal-body">
+    <form>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+        </div>
+        <input type="text" class="form-control"  aria-describedby="basic-addon1" #name>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >Author</span>
+        </div>
+        <input type="text" class="form-control"  aria-describedby="basic-addon1" #author>
+      </div>
+      <label for="basic-url">Image URL</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon3">https://img/.png</span>
+        </div>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" #image>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">More about book:</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea" #more></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="addNewBook(name.value, author.value, more.value, image.value, 0)">Save</button>
+  </div>
+</ng-template>
+<a routerLink="addBook">
+  <button class="btn btn-lg btn-outline-dark " (click)="open(content)" style="width: 80%; margin-left: 120px;">Add Book </button>
+</a>
+<hr>

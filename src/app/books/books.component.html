@@ -1,2 +1,12 @@
-<app-book></app-book>
+<div class="all">
+  <h1 class="text-center" style="color: black ; font-family: 'Book Antiqua'">Books</h1>
+  <h3 class="text-center" style="color: black; font-family: 'Book Antiqua'"> Here you can find info about Books</h3>
+  <br>
+  <div class="row row-cols-md-3 row-cols-md-3 g-4">
+    <app-book *ngFor="let bookList of bookList" [list]="bookList" ></app-book>
+  </div>
+  <a routerLink="addBook">
+    <app-add-new-book (newItemEvent)="addItem($event)"> </app-add-new-book>
+  </a>
+</div>
 <app-footer></app-footer>

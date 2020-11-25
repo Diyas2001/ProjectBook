@@ -8,11 +8,12 @@ import {BookLogging} from './BookService/bookLogging';
   styleUrls: ['./add-new-book.component.css']
 })
 export class AddNewBookComponent implements OnInit {
-
-  closeResult = '';
   constructor(private modalService: NgbModal) {}
 
-  // tslint:disable-next-line:typedef
+  closeResult = '';
+  @Output() newItemEvent = new EventEmitter<any>();
+  @Input() list: [];
+
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -20,11 +21,8 @@ export class AddNewBookComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-  @Output() newItemEvent = new EventEmitter<any>();
-  @Input() list: [];
-  // tslint:disable-next-line:typedef
-  addNewBook(name: string, author: string, likes: string)  {
-    this.newItemEvent.emit({name, author, likes});
+  addNewBook( name: string, author: string, more: string, img: string, likes: number)  {
+    this.newItemEvent.emit({name, author, more, img, likes});
 
   }
   private getDismissReason(reason: any): string {
