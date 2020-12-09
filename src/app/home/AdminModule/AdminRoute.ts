@@ -1,15 +1,18 @@
 import {RouterModule, Routes} from '@angular/router';
-import {GroupComponent} from './group/group.component';
-import {UserComponent} from './user/user.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
 import {NgModule} from '@angular/core';
+import {LoginComponent} from './login/login.component';
+import {RegistrationComponent} from './registration/registration.component';
 
 
 const adminRoutes: Routes = [
-  {path: '', component: UserComponent},
-  {path: 'user', component: UserComponent},
-  {path: 'group', component: GroupComponent},
-  {path: 'dashboard', component: DashboardComponent}
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'regist',
+    component: RegistrationComponent
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(adminRoutes)],

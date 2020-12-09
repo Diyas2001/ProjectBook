@@ -1,3 +1,4 @@
+
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Add Book</h4>
@@ -36,7 +37,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="addNewBook(name.value, author.value, more.value, image.value, 0)">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="addNewBook(name.value, author.value, more.value, image.value)">Save</button>
   </div>
 </ng-template>
 <a routerLink="addBook">

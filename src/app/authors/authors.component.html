@@ -1,2 +1,7 @@
-  <app-author></app-author>
+<h2 style="text-align: center" class="h1 pt-4">Authors</h2>
+<p style="text-align: center" class="grey-text mb-5 mt-5 px-3">Here you can find info about Authors</p>
+<div class="row row-cols-md-3 row-cols-md-3 g-4">
+<app-author *ngFor="let authorList of authorList" [list1]="authorList" ></app-author>
+</div>
+<br>
   <app-footer></app-footer>

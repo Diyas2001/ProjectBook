@@ -11,11 +11,11 @@ import { FooterComponent } from './home/footer/footer.component';
 import { BookComponent } from './books/book/book.component';
 import { AboutComponent } from './home/about/about.component';
 import { AuthorComponent } from './authors/author/author.component';
-import { LoginComponent } from './home/login/login.component';
-import { RegistrationComponent } from './home/registration/registration.component';
 import { AddNewBookComponent } from './books/add-new-book/add-new-book.component';
 import {AdminModule} from './home/AdminModule/AdminModule';
-import {LikePipe} from './books/book/LikePipe';
+import {BookService} from './books/add-new-book/BookService/bookService';
+import {BookLogging} from './books/add-new-book/BookService/bookLogging';
+import {AuthorService} from './authors/author/authorService';
 
 @NgModule({
   declarations: [
@@ -28,17 +28,14 @@ import {LikePipe} from './books/book/LikePipe';
     BookComponent,
     AboutComponent,
     AuthorComponent,
-    LoginComponent,
-    RegistrationComponent,
     AddNewBookComponent,
-    LikePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AdminModule
   ],
-  providers: [],
+  providers: [BookService, BookLogging, AuthorService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

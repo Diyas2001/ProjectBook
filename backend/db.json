@@ -1,0 +1,13 @@
+{
+"users": [
+{
+"id": 1,
+"first_name": "Admin",
+"last_name": "Admin",
+"email": "admin@admin.com",
+"password": "admin",
+"isAdmin": "true"
+}
+]
+}
+

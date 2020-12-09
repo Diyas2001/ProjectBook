@@ -21,9 +21,9 @@ export class AddNewBookComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-  addNewBook( name: string, author: string, more: string, img: string, likes: number)  {
-    this.newItemEvent.emit({name, author, more, img, likes});
-
+  addNewBook( name: string, author: string, more: string, img: string)  {
+    this.newItemEvent.emit({name, author, more, img});
+    this.modalService.dismissAll();
   }
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {

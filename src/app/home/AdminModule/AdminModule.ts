@@ -1,20 +1,22 @@
 import {NgModule} from '@angular/core';
-import {GroupComponent} from './group/group.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {UserComponent} from './user/user.component';
 import {AdminRoutingModule} from './AdminRoute';
+import {LoginComponent} from './login/login.component';
+import {RegistrationComponent} from './registration/registration.component';
+import {CommonModule} from '@angular/common';
+import {Router} from '@angular/router';
+import {AuthenticationService} from './auth.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    GroupComponent,
-    DashboardComponent,
-    UserComponent
+    LoginComponent,
+    RegistrationComponent,
   ],
-  imports: [AdminRoutingModule],
-  providers: [],
-  exports: [
-    UserComponent, GroupComponent, DashboardComponent
+  imports: [AdminRoutingModule,
+    CommonModule, FormsModule],
+  providers: [
+
   ],
-  bootstrap: [UserComponent]
  })
-export class AdminModule {}
+export class AdminModule {private router: Router; private authenticationService: AuthenticationService
+}

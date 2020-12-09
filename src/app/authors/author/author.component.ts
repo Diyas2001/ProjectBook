@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-author',
-  templateUrl: './author.component.html',
+  templateUrl:'./author.component.html',
   styleUrls: ['./author.component.css']
 })
 export class AuthorComponent implements OnInit {
 
   constructor() { }
+  @Input() list1;
+
+  text;
 
   ngOnInit(): void {
   }
