@@ -1,34 +1,49 @@
 <div class="container">
 <!-- Default form register -->
-<form class="text-center border border-light p-5" action="#!">
+<form #form="ngForm" class="text-center border border-light p-5" action="#!">
 
   <p class="h4 mb-4">Registration</p>
 
   <div class="form-row mb-4">
     <div class="col">
       <!-- First name -->
-      <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+      <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" required [(ngModel)]="userDetails.first_name" name = "first_name" #first_name = "ngModel">
+      <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)"
+           class="alert alert-danger">
+        <div *ngIf="first_name.errors.required">
+          This field is required!
+        </div>
+      </div>
     </div>
     <div class="col">
       <!-- Last name -->
-      <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+      <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name" placeholder="First name" placeholder="Last name" required [(ngModel)]="userDetails.last_name" name = "last_name" #last_name = "ngModel">
+      <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)"
+           class="alert alert-danger">
+        <div *ngIf="last_name.errors.required">
+          This field is required!
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- E-mail -->
-  <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+  <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" placeholder="E-mail" email [(ngModel)]="userDetails.email" name = "email" #email = "ngModel">
+  <div *ngIf="email.invalid && (email.dirty || email.touched)"
+       class="alert alert-danger">
+    <div *ngIf="email.errors.email">
+      E-mail should be valid!!
+    </div>
+  </div>
 
   <!-- Password -->
-  <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-  <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-    At least 8 characters and 1 digit
-  </small>
-
-  <!-- Phone number -->
-  <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-  <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-    Optional - for two step authentication
-  </small>
+  <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" placeholder="Password" [(ngModel)]="userDetails.password" name = "password" minlength="8" aria-describedby="defaultRegisterFormPasswordHelpBlock" #password = "ngModel">
+  <div *ngIf="password.invalid && (password.dirty || password.touched)"
+       class="alert alert-danger">
+    <div *ngIf="password.errors.minlength">
+      Password should be at least 8 characters!
+    </div>
+  </div>
 
   <!-- Newsletter -->
   <div class="custom-control custom-checkbox">
@@ -37,7 +52,7 @@
   </div>
 
   <!-- Sign up button -->
-  <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+  <button class="btn btn-info my-4 btn-block" type="submit" (click)="addUser('')" [disabled]="!form.valid">Sign in</button>
 
   <!-- Social register -->
   <p>or sign up with:</p>

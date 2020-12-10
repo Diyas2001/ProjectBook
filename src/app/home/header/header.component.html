@@ -38,8 +38,10 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default"
              aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" routerLink="login">Login</a>
-          <a class="dropdown-item" routerLink="regist">Registration</a>
+          <a *ngIf="!username || 0 === username.length" class="dropdown-item" routerLink="login">Login</a>
+          <div class="divider dropdown-divider"></div>
+          <a *ngIf="!username || 0 === username.length" class="dropdown-item" routerLink="regist">Register</a>
+          <a (click)="auth.logout()" *ngIf="username !== null && username !== ''" class="dropdown-item" href="#">Logout</a>
         </div>
       </li>
     </ul>

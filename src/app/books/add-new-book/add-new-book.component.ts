@@ -34,6 +34,7 @@ export class AddNewBookComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+  username = localStorage.getItem('username');
   ngOnInit(): void {
   }
 }

@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private _auth: AuthenticationService, private _router: Router, private userService: UserService) {
     if (this._auth.loggedIn) {
-      this._router.navigate(['home']);
+      this._router.navigate(['/']);
     }
   }
   User: any = [];

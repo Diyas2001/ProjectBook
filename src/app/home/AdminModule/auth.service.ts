@@ -1,10 +1,11 @@
 import {Injectable, OnInit} from '@angular/core';
 import {UserService} from './user.service';
+import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService{
-  constructor(private userService : UserService) {
+  constructor(private userService : UserService, private http: HttpClient) {
   }
   User = this.userService.getUsers().subscribe(data => this.User = data)
 

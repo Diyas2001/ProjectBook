@@ -41,6 +41,6 @@
   </div>
 </ng-template>
 <a routerLink="addBook">
-  <button class="btn btn-lg btn-outline-dark " (click)="open(content)" style="width: 80%; margin-left: 120px;">Add Book </button>
+  <button class="btn btn-lg btn-outline-dark " *ngIf="username !== null && username !== ''" (click)="open(content)" style="width: 80%; margin-left: 120px;">Add Book </button>
 </a>
 <hr>

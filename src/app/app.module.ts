@@ -16,6 +16,9 @@ import {AdminModule} from './home/AdminModule/AdminModule';
 import {BookService} from './books/add-new-book/BookService/bookService';
 import {BookLogging} from './books/add-new-book/BookService/bookLogging';
 import {AuthorService} from './authors/author/authorService';
+import {AuthenticationService} from './home/AdminModule/auth.service';
+import {UserService} from './home/AdminModule/user.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,9 +36,10 @@ import {AuthorService} from './authors/author/authorService';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    HttpClientModule
   ],
-  providers: [BookService, BookLogging, AuthorService],
+  providers: [BookService, BookLogging, AuthorService, AuthenticationService, UserService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
